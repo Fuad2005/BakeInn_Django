@@ -1,0 +1,124 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+{% load custom_tags %}
+
+
+{% block main %}
+  <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+  <section class="breadcrumb_area" style="background: url({% static 'assets/images/breadcrumb_bg.jpg' %})">
+    <div class="container">
+      <div class="row wow fadeInUp">
+        <div class="col-12">
+          <div class="breadcrumb_text">
+            <h1>Əlaqə</h1>
+            <ul>
+              <li><a href="index.html">Ana Səhifə </a></li>
+              <li><a href="#">Əlaqə</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+  <!--==========================
+        CONTACT START
+    ===========================-->
+  <section class="contact_us pt_40">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 wow fadeInLeft">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias in,
+            neque velit aut ea suscipit doloribus soluta inventore qui amet
+            veritatis placeat fugit repudiandae eum, dolores earum. Amet
+            numquam repellendus suscipit ullam harum blanditiis pariatur.
+            Voluptate quas eos amet tempora!
+          </p>
+          <div class="contact-wrapper">
+            <div class="col-xl-12 col-12 wow fadeInUp">
+              <div class="contact_info">
+                <div class="icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="text">
+                  <p>
+                    16/A, Romadan House City Tower New York, United States
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-12 wow fadeInUp">
+              <div class="contact_info">
+                <div class="icon">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="text">
+                  {% remove_spaces socials.phone_number as phone_without_spaces %}
+                  <a class="main-nav-one__infos-phone" href="tel:{{ phone_without_spaces }}">{{ socials.phone_number }}</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-12 wow fadeInUp">
+              <div class="contact_info">
+                <div class="icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="text">
+                  <a class="main-nav-one__infos-email" href="mailto:{{socials.mail}}">{{ socials.mail }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInRight">
+          <div class="contact_form">
+            <h2>Bizimlə əlaqə</h2>
+            <form action="#" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  {{form.name}}
+                </div>
+                <div class="col-md-6">
+                  {{form.company_name}}
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="countrycode">+994</span>
+                      {{form.phone_number}}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  {{form.email}}
+                </div>
+                <div class="col-12">
+                  {{form.service_type}}
+                </div>
+                <div class="col-md-12">
+                  {{form.message}}
+                  <button class="common_btn">göndərin</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact_map wow fadeInUp">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.8776746534986!2d-77.027541687759!3d38.903912546200644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7931d95b707%3A0x16e85cf5a8a5fdce!2sMarriott%20Marquis%20Washington%2C%20DC!5e0!3m2!1sen!2sbd!4v1700767199965!5m2!1sen!2sbd"
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+  <!--==========================
+        CONTACT END
+    ===========================-->
+
+{% endblock main %}

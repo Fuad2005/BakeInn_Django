@@ -1,0 +1,458 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+{% block title %}Bukhari{% endblock title %}
+
+
+{% block main %}
+
+
+  <!--==========================
+        BANNER START
+    ===========================-->
+  <section class="banner">
+    <div class="container container_large">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-xxl-6 col-lg-6 col-xl-6 col-md-9">
+          <div class="banner_text wow fadeInUp">
+            <h5>Dadlı yeməklər</h5>
+            <h1>Sizlərə xidmət üçün müxtəlif təamlar</h1>
+            <p>
+              Commodo ullamcorper a lacus vestibulum sed arcu non. Non blandit
+              massa enim Sem viverra aliquet eget sit amet tellus cras
+            </p>
+            <a class="header-more_btn" href="menu_01.html">Menu</a>
+          </div>
+        </div>
+        <div class="col-xxl-5 col-lg-6 col-xl-6">
+          <div class="banner_img wow fadeInRight">
+            <div class="img">
+              <img src="{% static 'assets/images/banner_img.png' %}" alt="banner" class="img-fluid w-100" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        BANNER END
+    ===========================-->
+
+  <!--==========================
+        ABOUT START
+    ===========================-->
+  <section class="about_us_2 mt_60">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 wow fadeInLeft">
+          <div class="about_us_2_img">
+            <img src="{% static 'assets/images/about_2_img_1.jpg' %}" alt="about us" class="img-fluid w-100" />
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInRight">
+          <div class="about_us_2_text">
+            <h5>Haqqımızda</h5>
+            <h2>Bukharıya xoş gəlmisiniz!</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              laborum deserunt voluptas nemo, iusto sequi dolor tempora sed
+              provident itaque, fugit autem odio cupiditate officia quaerat.
+              Magni modi earum commodi omnis culpa deleniti. Ad sunt,
+              blanditiis veniam ipsam voluptas aliquam.Iiusto sequi dolor
+              tempora sed provident itaque, fugit autem odio cupiditate
+              officia quaerat. Magni modi earum commodi omnis culpa deleniti.
+            </p>
+            <a class="menu_order common_btn morebtn_about" href="about.html">
+              Ətraflı
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        ABOUT END
+    ===========================-->
+
+  <!--==========================
+        MENU START
+    ===========================-->
+  <section class="related_menu pt_70 xs_pt_85">
+    <div class="container">
+      <div class="row wow fadeInUp">
+        <div class="col-xl-5">
+          <div class="section_heading heading_left mb_10">
+            <h5>Menu</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row related_slider">
+        
+        <div class="col-xl-3 wow fadeInUp">
+          <div class="single_menu">
+            <div class="single_menu_img">
+              <img src="{% static 'assets/images/menu_img_4.jpg' %}" alt="menu" class="img-fluid w-100" />
+              <ul>
+                <li>
+                  <a href="menu_details.html"><i class="far fa-eye"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="single_menu_text">
+              <a class="category" href="#">Pizza</a>
+              <div class="single_menu_name">
+                <a class="title" href="menu_details.html">Mexican Pizza</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        MENU END
+    ===========================-->
+
+  <!--==========================
+        SERVICES START
+    ===========================-->
+  <section class="branches mt_30 xs_mt_75 pt_20">
+    <div class="container">
+      <div class="row">
+        <div class="section_heading heading_left mb_10">
+          <h5>Xidmətlərimiz</h5>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_1.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">Australia Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_2.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">New York Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_3.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">Nepal Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_4.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">China Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_5.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">thailand Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_6.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">japan Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_7.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">kanada Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+          <div class="single_branch">
+            <div class="single_branch_img">
+              <img src="assets/images/branch_img_8.jpg" alt="branch" class="img-fluid w-100" />
+            </div>
+            <div class="single_branch_text">
+              <div class="single_branch_title">
+                <a class="title" href="#">USA Branch</a>
+              </div>
+              <div class="single_branch_content">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Aliquid, minima.
+                </p>
+              </div>
+              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
+                  class="far fa-angle-right"></i></a>
+              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
+                  class="far fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="branches-button">
+        <a class="common_btn morebtn_about mt_35" href="services.html">Daha çox
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        SERVICES END
+    ===========================-->
+
+  <!--==========================
+        TESTIMONIAL START
+    ===========================-->
+  <section class="testimonial mt_100 xs_mt_100" style="background: url(assets/images/testimonial_bg.jpg)">
+    <div class="testimonial_overlay pt_400 xs_pt_100">
+      <div class="container">
+        <div class="testimonial_video">
+          <a class="venobox play_btn" data-autoplay="true" data-vbtype="video"
+            href="https://youtu.be/nqye02H_H6I?si=ougeOsfL0tat6YbT">
+            <i class="fas fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        TESTIMONIAL END
+    ===========================-->
+
+  <!--==========================
+        COUNTER START
+    ===========================-->
+  <section class="counter_area_2">
+    <div class="counter_area_2_overlay pt_20 pb_20">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="single_counter_2_area">
+              <ul>
+                <li class="wow fadeInUp">
+                  <div class="icon">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <h3><span class="counter">856</span>+</h3>
+                  <p>Müştərilərimiz</p>
+                </li>
+                <li class="wow fadeInUp">
+                  <div class="icon">
+                    <i class="fa-solid fa-ranking-star"></i>
+                  </div>
+                  <h3><span class="counter">25</span>+</h3>
+                  <p>Təcrübə</p>
+                </li>
+                <li class="wow fadeInUp">
+                  <div class="icon">
+                    <i class="fa-solid fa-spray-can-sparkles"></i>
+                  </div>
+                  <h3><span class="counter">100</span>%</h3>
+                  <p>Təmiz & Halal</p>
+                </li>
+                <li class="wow fadeInUp">
+                  <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <h3><span class="counter">150</span>+</h3>
+                  <p>Üzvlər</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        COUNTER END
+    ===========================-->
+
+  <!--==========================
+        BLOG START
+    ===========================-->
+  <section class="blog pt_70 xs_pt_40">
+    <div class="container">
+      <div class="row">
+        <div class="section_heading heading_left mb_10">
+          <h5>Xəbərlər</h5>
+        </div>
+        <div class="col-lg-4 col-6 wow fadeInUp">
+          <div class="single_blog">
+            <div class="single_blog_img">
+              <img src="assets/images/blog_img_1.jpg" alt="blog" class="img-fluid w-100" />
+            </div>
+            <div class="single_blog_text">
+              <ul>
+                <li>
+                  <i class="fa-solid fa-calendar-days"></i>
+                  Aprel 3, 2024
+                </li>
+              </ul>
+              <div class="blog_content_h4">
+                <a class="title" href="blog_details.html">Hamburger və Burger arasındakı fərq nədir?</a>
+              </div>
+
+              <a class="read_btn" href="blog_details.html">Ətraflı<i class="far fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-6 wow fadeInUp">
+          <div class="single_blog">
+            <div class="single_blog_img">
+              <img src="assets/images/blog_img_2.jpg" alt="blog" class="img-fluid w-100" />
+            </div>
+            <div class="single_blog_text">
+              <ul>
+                <li>
+                  <i class="fa-solid fa-calendar-days"></i>
+                  Aprel 3, 2024
+                </li>
+              </ul>
+              <div class="blog_content_h4">
+                <a class="title" href="blog_details.html">Şərabın Yeməklərlə servisi: müəyyən məsləhətlər</a>
+              </div>
+              <a class="read_btn" href="blog_details.html">Ətraflı<i class="far fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-6 wow fadeInUp">
+          <div class="single_blog">
+            <div class="single_blog_img">
+              <img src="assets/images/blog_img_3.jpg" alt="blog" class="img-fluid w-100" />
+            </div>
+            <div class="single_blog_text">
+              <ul>
+                <li>
+                  <i class="fa-solid fa-calendar-days"></i>
+                  Aprel 3, 2024
+                </li>
+              </ul>
+              <div class="blog_content_h4">
+                <a class="title" href="blog_details.html">Bizim mətbəxin möcüzələri şirin, duzlu, turş</a>
+              </div>
+              <a class="read_btn" href="blog_details.html">Ətraflı<i class="far fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="branches-button">
+        <a class="common_btn morebtn_about mt_35" href="blogs.html">Daha çox
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--==========================
+        BLOG END
+    ===========================-->
+{% endblock main %}

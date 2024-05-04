@@ -1,0 +1,61 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+{% block main %}
+    <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+    <section
+      class="breadcrumb_area"
+      style="background: url(assets/images/breadcrumb_bg.jpg)"
+    >
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-12">
+            <div class="breadcrumb_text">
+              <h1>Menu</h1>
+              <ul>
+                <li><a href="index.html">Ana Səhifə </a></li>
+                <li><a href="#">Menu</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+    <!--==========================
+        MENU START
+    ===========================-->
+    <section class="shefs pt_10">
+      <div class="container">
+        <div class="row">
+
+          {% for menu_item in menu %}
+          <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+            <div class="single_menu">
+              <a href="menu_details.html" class="single_menu_img">
+                <img
+                  src="{{get_first_image(menu_item)}}"
+                  alt="{{ menu_item.title }}"
+                  class="img-fluid w-100"
+                />
+                <span>{{menu_item.tag}}</span>
+              </a>
+              <div class="single_menu_text">
+                <a class="title" href="menu_details.html">{{menu_item.title}}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        MENU END
+    ===========================-->
+{% endblock main %}

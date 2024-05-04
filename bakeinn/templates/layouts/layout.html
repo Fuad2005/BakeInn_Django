@@ -1,0 +1,322 @@
+{% load static %}
+{% load custom_tags %}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+  <title>{% block title %}Title{% endblock title %}</title>
+  <link rel="icon" type="image/png" href="{% static 'assets/images/favicon.png' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/venobox.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/ranger_slider.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/scroll_button.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/custom_spacing.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/select2.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/colorfulTab.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/jquery.animatedheadline.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/animated_barfiller.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="{% static 'assets/css/jquery.fancybox.min.css' %}" />
+</head>
+
+<body>
+  <!--==========================
+        HEADER START 
+    ===========================-->
+  <header>
+    <div class="container_large">
+      <div class="container">
+        <div class="header_left">
+          <a class="main-nav-one__infos-email" href="mailto:{{socials.mail}}"><i
+              class="fa fa-envelope"></i>{{ socials.mail }}</a>
+          {% remove_spaces socials.phone_number as phone_without_spaces %}
+          <a class="main-nav-one__infos-phone" href="tel:{{ phone_without_spaces }}"><i class="fa-solid fa-phone"></i>{{ socials.phone_number }}</a>
+        </div>
+        <div class="header_right">
+          <ul>
+            <li>
+              <select class="select_js">
+                <option value="">Az</option>
+                <option value="">En</option>
+                <option value="">Ru</option>
+              </select>
+            </li>
+            <li class="header_socials">
+              <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=994556788974" target="_blank"><i
+                  class="fab fa-whatsapp"></i></a>
+              <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="https://twitter.com/i/flow/login" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--==========================
+        HEADER END
+    ===========================-->
+
+    <!--==========================
+        MENU SEARCH START
+    ===========================-->
+    <nav class="navbar navbar-expand-lg main_menu">
+      <div class="container container_large">
+        <a class="navbar-brand" href="{% url "home" %}">
+          <img src="{% static 'assets/images/bukhari-catering.png' %}" alt="RESTINA" class="img-fluid w-100" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars bar_icon"></i>
+          <i class="far fa-times close_icon"></i>
+        </button>
+        <div class="collapse navbar-collapse bake-navbar" id="navbarSupportedContent">
+     
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url "home" %}">Ana səhifə </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "about" %}">Haqqımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "menu" %}">Menu <i class="fal fa-plus"></i></a>
+              <ul class="droap_menu">
+                <li><a href="menu.html">Burger</a></li>
+                <li><a href="menu.html">Pizza</a></li>
+                <li><a href="menu.html">Qəlyənaltılar</a></li>
+                <li><a href="menu.html">İçkilər</a></li>
+                <li><a href="menu.html">Burger</a></li>
+                <li><a href="menu.html">Pizza</a></li>
+                <li><a href="menu.html">Qəlyənaltılar</a></li>
+                <li><a href="menu.html">İçkilər</a></li>
+                <li><a href="menu.html">Burger</a></li>
+                <li><a href="menu.html">Pizza</a></li>
+                <li><a href="menu.html">Qəlyənaltılar</a></li>
+                <li><a href="menu.html">İçkilər</a></li>
+                <li><a href="menu.html">Burger</a></li>
+                <li><a href="menu.html">Pizza</a></li>
+                <li><a href="menu.html">Qəlyənaltılar</a></li>
+                <li><a href="menu.html">İçkilər</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Xidmətlər</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Qalereya</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blogs.html">Bloq</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "contact" %}">Əlaqə</a>
+            </li>
+          </ul>
+          <ul class="menu_right">
+            <li>
+              <a class="menu_search"><i class="far fa-search"></i></a>
+            </li>
+  
+            <li>
+              <a class="menu_order common_btn" href="{% url "contact" %}">
+                <i class="fa-solid fa-shop"></i>
+                müraciət et
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="menu_search_area">
+      <form>
+        <input type="text" placeholder="Məhsulu axtar..." />
+        <button class="common_btn" type="submit">Axtar</button>
+        <span class="close_search"><i class="far fa-times"></i></span>
+      </form>
+    </div>
+    <!--==========================
+          MENU SEARCH END
+      ===========================-->
+
+{% block main %}{% endblock main %}
+
+
+
+    <!--==========================
+        FOOTER START
+    ===========================-->
+    <footer class="pt_50 mt_100">
+        <div class="container">
+          <div class="row justify-content-between wow fadeInUp">
+            <div class="col-lg-3 col-md-4">
+              <div class="footer_info">
+                <a class="footer_logo" href="index.html">
+                  <img src="assets/images/bukhari-catering.png" alt="RESTINA" class="img-fluid w-100" />
+                </a>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae, aperiam. Earum, recusandae animi! Magnam porro
+                  reiciendis, in facilis numquam dolorum mollitia similique
+                  accusantium perspiciatis ipsum consequatur eveniet consectetur
+                  repellendus repudiandae?
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6 col-md-4">
+              <div class="footer_link">
+                <h3>Keçidlər</h3>
+                <ul>
+                  <li><a href="index.html">Ana Səhifə</a></li>
+                  <li><a href="about.html">Haqqımızda</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="services.html">Xidmətlər</a></li>
+                  <li><a href="gallery.html">Qaleriya</a></li>
+                  <li><a href="blogs.html">Bloq</a></li>
+                  <li><a href="contact.html">Əlaqə</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6 col-md-4">
+              <div class="footer_link">
+                <h3>Xidmətlər</h3>
+                <ul>
+                  <li><a href="services.html">Tədbirlərin təşkili</a></li>
+                  <li><a href="services.html">Yerində istehsal sistemi</a></li>
+                  <li><a href="services.html">Səyyar sistem</a></li>
+                  <li><a href="services.html">Furşetlər</a></li>
+                  <li><a href="services.html">Banket təşkili</a></li>
+                </ul>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-9">
+              <div class="footer_link">
+                <h3>Bizimlə Əlaqə</h3>
+                <form>
+                  <input type="text" placeholder="Email daxil edin" />
+                  <button type="submit">Göndər</button>
+                </form>
+              </div>
+              <div class="footer_contact">
+                <ul>
+                  <li>
+                    <div class="footer-item">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <div class="footer_contact_w">
+                        <span>Addresss:</span>
+                        <a href="">Fauconberg Rd, London</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="footer-item">
+                      <i class="fa-solid fa-phone"></i>
+                      <div class="footer_contact_w">
+                        <span>Phone:</span>
+                        <a href="tel:(+1) 866-540-3229">(+1) 866-540-3229</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="footer-item">
+                      <i class="fa-solid fa-envelope"></i>
+                      <div class="footer_contact_w">
+                        <span>Email:</span>
+                        <a href=""> demo@example.com</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="footer_copyright">
+                <p>
+                  Copyright © 2024
+                  <a href="https://khanbutagroup.az/" target="_blank">Khan Buta Group</a>
+                  All Rights Reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--==========================
+            FOOTER END
+        ===========================-->
+    
+      <!--==========================
+            SCROLL BUTTON START
+        ===========================-->
+      <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
+      <!--==========================
+            SCROLL BUTTON END
+        ===========================-->
+    
+      <!--jquery library js-->
+      <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+      <!--bootstrap js-->
+      <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+      <!--font-awesome js-->
+      <script src="{% static 'assets/js/Font-Awesome.js' %}"></script>
+      <!--nice select js-->
+      <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+      <!--marquee js-->
+      <script src="{% static 'assets/js/jquery.marquee.min.js' %}"></script>
+      <!--slick js-->
+      <script src="{% static 'assets/js/slick.min.js' %}"></script>
+      <!--countup js-->
+      <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+      <script src="{% static 'assets/js/jquery.countup.min.js' %}"></script>
+      <!--venobox js-->
+      <script src="{% static 'assets/js/venobox.min.js' %}"></script>
+      <!--scroll button js-->
+      <script src="{% static 'assets/js/scroll_button.js' %}"></script>
+      <!--price ranger js-->
+      <script src="{% static 'assets/js/ranger_jquery-ui.min.js' %}"></script>
+      <script src="{% static 'assets/js/ranger_slider.js' %}"></script>
+      <!--select 2 js-->
+      <script src="{% static 'assets/js/select2.min.js' %}"></script>
+      <!--aos js-->
+      <script src="{% static 'assets/js/wow.min.js' %}"></script>
+      <!--colorfulTab js-->
+      <script src="{% static 'assets/js/colorfulTab.min.js' %}"></script>
+      <!--sticky sidebar js-->
+      <script src="{% static 'assets/js/sticky_sidebar.js' %}"></script>
+      <!--animated barfiller js-->
+      <script src="{% static 'assets/js/animated_barfiller.js' %}"></script>
+      <!--animatedheadline js-->
+      <script src="{% static 'assets/js/jquery.animatedheadline.min.js' %}"></script>
+      <!--script/custom js-->
+      <script src="{% static 'assets/js/script.js' %}"></script>
+       <script src="{% static 'assets/js/jquery.fancybox.min.js' %}"></script>
+      <script src="{% static 'assets/js/jquery.mask.min.js' %}"></script>
+    </body>
+    
+    </html>
