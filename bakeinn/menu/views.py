@@ -5,8 +5,16 @@ from .models import MenuItem
 
 def menuPage(request):
     tag = request.GET.get('tag')
+    title = request.GET.get('title')
+
     if tag:
         menu_list = MenuItem.objects.filter(tag__title=tag)
+    else:
+        menu_list = MenuItem.objects.all()
+
+
+    if title:
+        menu_list = MenuItem.objects.filter(title__icontains=title)
     else:
         menu_list = MenuItem.objects.all()
 

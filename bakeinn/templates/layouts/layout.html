@@ -147,8 +147,8 @@
     </nav>
   
     <div class="menu_search_area">
-      <form>
-        <input type="text" placeholder="Məhsulu axtar..." />
+      <form action="{% url 'menu' %}" method="get" >
+        <input type="text" name="title" placeholder="Məhsulu axtar..." />
         <button class="common_btn" type="submit">Axtar</button>
         <span class="close_search"><i class="far fa-times"></i></span>
       </form>
@@ -200,7 +200,7 @@
             <div class="col-lg-4 col-md-9">
               <div class="footer_link">
                 <h3>Bizimlə Əlaqə</h3>
-                <form>
+                <form >
                   <input type="text" placeholder="Email daxil edin" />
                   <button type="submit">Göndər</button>
                 </form>
