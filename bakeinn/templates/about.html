@@ -1,5 +1,5 @@
 {% extends "layouts/layout.html" %}
-
+{% load static %}
 
 {% block main %}
     
@@ -9,7 +9,7 @@
     ===========================-->
     <section
       class="breadcrumb_area"
-      style="background: url(assets/images/breadcrumb_bg.jpg)"
+      style="background: url({% static "assets/images/breadcrumb_bg.jpg" %})"
     >
       <div class="container">
         <div class="row wow fadeInUp">
@@ -17,7 +17,7 @@
             <div class="breadcrumb_text">
               <h1>Haqqımızda</h1>
               <ul>
-                <li><a href="index.html">Ana Səhifə </a></li>
+                <li><a href="{% url "home" %}">Ana Səhifə </a></li>
                 <li><a href="#">Haqqımızda</a></li>
               </ul>
             </div>
@@ -38,7 +38,7 @@
           <div class="col-lg-6 wow fadeInLeft">
             <div class="about_us_2_img">
               <img
-                src="assets/images/about_2_img_1.jpg"
+                src="{% static "assets/images/about_2_img_1.jpg" %}"
                 alt="about us"
                 class="img-fluid w-100"
               />
@@ -71,7 +71,7 @@
     ===========================-->
     <section
       class="testimonial mt_70"
-      style="background: url(assets/images/testimonial_bg.jpg)"
+      style="background: url({% static "assets/images/testimonial_bg.jpg" %})"
     >
       <div class="testimonial_overlay pt_400 xs_pt_100">
         <div class="container">
@@ -325,7 +325,7 @@
           <div class="col-xl-5 my-auto wow fadeInRight">
             <div class="faq_img">
               <img
-                src="assets/images/faq_1.png"
+                src="{% static "assets/images/faq_1.png" %}"
                 alt="faq"
                 class="img-fluid w-100"
               />

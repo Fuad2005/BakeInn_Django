@@ -87,11 +87,11 @@
         </div>
       </div>
       <div class="row related_slider">
-        
+        {% for item in menu_items %}
         <div class="col-xl-3 wow fadeInUp">
           <div class="single_menu">
             <div class="single_menu_img">
-              <img src="{% static 'assets/images/menu_img_4.jpg' %}" alt="menu" class="img-fluid w-100" />
+              <img src="{{item.get_main_image_url}}" alt="menu" class="img-fluid w-100" />
               <ul>
                 <li>
                   <a href="menu_details.html"><i class="far fa-eye"></i></a>
@@ -99,14 +99,14 @@
               </ul>
             </div>
             <div class="single_menu_text">
-              <a class="category" href="#">Pizza</a>
+              <a class="category" href="#">{{item.tag.title}}</a>
               <div class="single_menu_name">
-                <a class="title" href="menu_details.html">Mexican Pizza</a>
+                <a class="title" href="menu_details.html">{{item.title}}</a>
               </div>
             </div>
           </div>
         </div>
-        
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -126,7 +126,7 @@
         <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
           <div class="single_branch">
             <div class="single_branch_img">
-              <img src="assets/images/branch_img_1.jpg" alt="branch" class="img-fluid w-100" />
+              <img src="{% static 'assets/images/branch_img_1.jpg' %}" alt="branch" class="img-fluid w-100" />
             </div>
             <div class="single_branch_text">
               <div class="single_branch_title">
@@ -313,7 +313,7 @@
   <!--==========================
         TESTIMONIAL START
     ===========================-->
-  <section class="testimonial mt_100 xs_mt_100" style="background: url(assets/images/testimonial_bg.jpg)">
+  <section class="testimonial mt_100 xs_mt_100" style="background: url({% static "assets/images/testimonial_bg.jpg" %})">
     <div class="testimonial_overlay pt_400 xs_pt_100">
       <div class="container">
         <div class="testimonial_video">

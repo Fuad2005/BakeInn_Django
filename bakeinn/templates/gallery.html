@@ -1,0 +1,133 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+
+{% block main %}
+    <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+    <section
+      class="breadcrumb_area"
+      style="background: url({% static "assets/images/breadcrumb_bg.jpg" %})"
+    >
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-12">
+            <div class="breadcrumb_text">
+              <h1>Qalereya</h1>
+              <ul>
+                <li><a href="index.html">Ana Səhifə </a></li>
+                <li><a href="#">Qalereya</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+    <!--==========================
+        BLOG DETAILS START
+    ===========================-->
+    <section class="blog_details gallery-page mt_10">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 wow fadeInLeft">
+            <div class="related_posts">
+              <div class="row">
+                {% for g_item in gallery %}
+                <div class="col-lg-3 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{{g_item.image.url}}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{{g_item.image.url}}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="pagination_area mt_60 wow fadeInUp">
+      <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+              {% if gallery.has_previous %}
+                  <li class="page-item">
+                      <a class="page-link" href="?page={{ gallery.previous_page_number }}" aria-label="Previous">
+                          <i class="far fa-arrow-left"></i>
+                      </a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <i class="far fa-arrow-left"></i>
+                      </a>
+                  </li>
+              {% endif %}
+              {% for i in gallery.paginator.page_range %}
+                  {% if gallery.number == i %}
+                      <li class="page-item "><a class="page-link active" href="?page={{ i }}">{{ i }}</a></li>
+                  {% else %}
+                      <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                  {% endif %}
+              {% endfor %}
+              {% if gallery.has_next %}
+                  <li class="page-item">
+                      <a class="page-link" href="?page={{ gallery.next_page_number }}" aria-label="Next">
+                          <i class="far fa-arrow-right"></i>
+                      </a>
+                  </li>
+              {% else %}
+                  <li class="page-item disabled">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <i class="far fa-arrow-right"></i>
+                      </a>
+                  </li>
+              {% endif %}
+          </ul>
+      </nav>
+  </div>
+    <!--==========================
+        BLOG DETAILS END
+    ===========================-->
+
+    <!--==========================
+        TESTIMONIAL START
+    ===========================-->
+    <section
+      class="testimonial mt_40"
+      style="background: url(assets/images/testimonial_bg.jpg)"
+    >
+      <div class="testimonial_overlay pt_400 xs_pt_100">
+        <div class="container">
+          <div class="testimonial_video">
+            <a
+              class="venobox play_btn"
+              data-autoplay="true"
+              data-vbtype="video"
+              href="https://youtu.be/nqye02H_H6I?si=ougeOsfL0tat6YbT"
+            >
+              <i class="fas fa-play"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        TESTIMONIAL END
+    ===========================-->
+
+{% endblock %}

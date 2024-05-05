@@ -23,6 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path(getenv('ADMIN_URL'), admin.site.urls),
     path('', include('info.urls')),
+    path('rosetta/', include('rosetta.urls')),
     path('menu/', include('menu.urls')),
     path('contact/', include('contact.urls')),
+    path('gallery/', include('gallery.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

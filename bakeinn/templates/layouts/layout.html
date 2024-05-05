@@ -56,16 +56,28 @@
               </select>
             </li>
             <li class="header_socials">
-              <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://api.whatsapp.com/send?phone=994556788974" target="_blank"><i
-                  class="fab fa-whatsapp"></i></a>
-              <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-              <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-              <a href="https://twitter.com/i/flow/login" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            </li>
+              {% if socials.facebook_link %}
+              <a href="{{socials.facebook_link}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+              {% endif %}
+              {% if socials.instagram_link %}
+              <a href="{{socials.instagram_link}}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              {% endif %}
+              {% if socials.whatsapp_link %}
+              <a href="{{socials.whatsapp_link}}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              {% endif %}
+              {% if socials.youtube_link %}
+              <a href="{{socials.youtube_link}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              {% endif %}
+              {% if socials.linkedin_link %}
+              <a href="{{socials.linkedin_link}}" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+              {% endif %}
+              {% if socials.tiktok_link %}
+              <a href="{{socials.tiktok_link}}" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+              {% endif %}
+              {% if socials.twitter_link %}
+              <a href="{{socials.twitter_link}}" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+              {% endif %}
+          </li>
           </ul>
         </div>
       </div>
@@ -100,29 +112,16 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url "menu" %}">Menu <i class="fal fa-plus"></i></a>
               <ul class="droap_menu">
-                <li><a href="menu.html">Burger</a></li>
-                <li><a href="menu.html">Pizza</a></li>
-                <li><a href="menu.html">Qəlyənaltılar</a></li>
-                <li><a href="menu.html">İçkilər</a></li>
-                <li><a href="menu.html">Burger</a></li>
-                <li><a href="menu.html">Pizza</a></li>
-                <li><a href="menu.html">Qəlyənaltılar</a></li>
-                <li><a href="menu.html">İçkilər</a></li>
-                <li><a href="menu.html">Burger</a></li>
-                <li><a href="menu.html">Pizza</a></li>
-                <li><a href="menu.html">Qəlyənaltılar</a></li>
-                <li><a href="menu.html">İçkilər</a></li>
-                <li><a href="menu.html">Burger</a></li>
-                <li><a href="menu.html">Pizza</a></li>
-                <li><a href="menu.html">Qəlyənaltılar</a></li>
-                <li><a href="menu.html">İçkilər</a></li>
+                {% for category in categories %}
+                <li><a href="{% url "menu" %}?tag={{category.title}}">{{category.title}}</a></li>
+                {% endfor %}
               </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="services.html">Xidmətlər</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Qalereya</a>
+              <a class="nav-link" href="{% url "gallery" %}">Qalereya</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="blogs.html">Bloq</a>
@@ -171,7 +170,7 @@
             <div class="col-lg-3 col-md-4">
               <div class="footer_info">
                 <a class="footer_logo" href="index.html">
-                  <img src="assets/images/bukhari-catering.png" alt="RESTINA" class="img-fluid w-100" />
+                  <img src="{% static "assets/images/bukhari-catering.png" %}" alt="RESTINA" class="img-fluid w-100" />
                 </a>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -186,28 +185,17 @@
               <div class="footer_link">
                 <h3>Keçidlər</h3>
                 <ul>
-                  <li><a href="index.html">Ana Səhifə</a></li>
-                  <li><a href="about.html">Haqqımızda</a></li>
-                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="{% url "home" %}">Ana Səhifə</a></li>
+                  <li><a href="{% url "about" %}">Haqqımızda</a></li>
+                  <li><a href="{% url "menu" %}">Menu</a></li>
                   <li><a href="services.html">Xidmətlər</a></li>
-                  <li><a href="gallery.html">Qaleriya</a></li>
+                  <li><a href="{% url "gallery" %}">Qaleriya</a></li>
                   <li><a href="blogs.html">Bloq</a></li>
-                  <li><a href="contact.html">Əlaqə</a></li>
+                  <li><a href="{% url "contact" %}">Əlaqə</a></li>
                 </ul>
               </div>
             </div>
-            <div class="col-lg-2 col-sm-6 col-md-4">
-              <div class="footer_link">
-                <h3>Xidmətlər</h3>
-                <ul>
-                  <li><a href="services.html">Tədbirlərin təşkili</a></li>
-                  <li><a href="services.html">Yerində istehsal sistemi</a></li>
-                  <li><a href="services.html">Səyyar sistem</a></li>
-                  <li><a href="services.html">Furşetlər</a></li>
-                  <li><a href="services.html">Banket təşkili</a></li>
-                </ul>
-              </div>
-            </div>
+
     
             <div class="col-lg-4 col-md-9">
               <div class="footer_link">
@@ -224,7 +212,7 @@
                       <i class="fa-solid fa-location-dot"></i>
                       <div class="footer_contact_w">
                         <span>Addresss:</span>
-                        <a href="">Fauconberg Rd, London</a>
+                        <a href="">{{socials.address}}</a>
                       </div>
                     </div>
                   </li>
@@ -233,7 +221,8 @@
                       <i class="fa-solid fa-phone"></i>
                       <div class="footer_contact_w">
                         <span>Phone:</span>
-                        <a href="tel:(+1) 866-540-3229">(+1) 866-540-3229</a>
+                        {% remove_spaces socials.phone_number as phone_without_spaces %}
+                        <a  href="tel:{{ phone_without_spaces }}">{{ socials.phone_number }}</a>
                       </div>
                     </div>
                   </li>
@@ -242,7 +231,7 @@
                       <i class="fa-solid fa-envelope"></i>
                       <div class="footer_contact_w">
                         <span>Email:</span>
-                        <a href=""> demo@example.com</a>
+                        <a href="mailto:{{socials.mail}}">{{ socials.mail }}</a>
                       </div>
                     </div>
                   </li>

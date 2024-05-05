@@ -1,2 +1,7 @@
 projectenv
+front
+migrations
 .env
+db.sqlite3
+__pycache__
+media

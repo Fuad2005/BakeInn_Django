@@ -15,7 +15,7 @@
             <div class="breadcrumb_text">
               <h1>Menu</h1>
               <ul>
-                <li><a href="index.html">Ana Səhifə </a></li>
+                <li><a href="{% url "home" %}">Ana Səhifə </a></li>
                 <li><a href="#">Menu</a></li>
               </ul>
             </div>
@@ -39,7 +39,7 @@
             <div class="single_menu">
               <a href="menu_details.html" class="single_menu_img">
                 <img
-                  src="{{get_first_image(menu_item)}}"
+                  src="{{ menu_item.get_main_image_url }}"
                   alt="{{ menu_item.title }}"
                   class="img-fluid w-100"
                 />
@@ -53,6 +53,47 @@
           {% endfor %}
 
         </div>
+
+        <div class="pagination_area mt_60 wow fadeInUp">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  {% if menu.has_previous %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ menu.previous_page_number }}" aria-label="Previous">
+                              <i class="far fa-arrow-left"></i>
+                          </a>
+                      </li>
+                    {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Previous">
+                              <i class="far fa-arrow-left"></i>
+                          </a>
+                      </li>
+                  {% endif %}
+                  {% for i in menu.paginator.page_range %}
+                      {% if menu.number == i %}
+                          <li class="page-item "><a class="page-link active" href="?page={{ i }}">{{ i }}</a></li>
+                      {% else %}
+                          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% if menu.has_next %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ menu.next_page_number }}" aria-label="Next">
+                              <i class="far fa-arrow-right"></i>
+                          </a>
+                      </li>
+                  {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Next">
+                              <i class="far fa-arrow-right"></i>
+                          </a>
+                      </li>
+                  {% endif %}
+              </ul>
+          </nav>
+      </div>
+
       </div>
     </section>
     <!--==========================
