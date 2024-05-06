@@ -1,0 +1,196 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+{% block title %}Xidmətlərimiz{% endblock %}
+
+{% block main %}
+    <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+    <section
+      class="breadcrumb_area"
+      style="background: url(assets/images/breadcrumb_bg.jpg)"
+    >
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-12">
+            <div class="breadcrumb_text">
+              <ul>
+                <li><a href="{% url "home" %}">Ana Səhifə </a></li>
+                <li><a href="#">Xidmətlərimiz</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+    <!--==========================
+        BRANCHES START
+    ===========================-->
+    <section class="branches mt_30 xs_mt_75 pt_20">
+      <div class="container">
+        <div class="row">
+          <div class="section_heading heading_left mb_10">
+            <h2>Xidmətlərimiz</h2>
+          </div>
+
+          {% for service in services %}
+          <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
+            <div class="single_branch">
+              <div class="single_branch_img">
+                <img
+                  src="{{service.image.url}}"
+                  alt="branch"
+                  class="img-fluid w-100"
+                />
+              </div>
+              <div class="single_branch_text">
+                <div class="single_branch_title">
+                  <a class="title" href="#">{{service.title}}</a>
+                </div>
+                <div class="single_branch_content">
+                  <p>
+                    {{service.description}}
+                  </p>
+                </div>
+                <a class="common_btn applybtn_apply" href="{% url "contact" %}"
+                  >Müraciət et <i class="far fa-angle-right"></i
+                ></a>
+                <a
+                  class="common_btn morebtn_services"
+                  href="service-details.html"
+                  >Ətraflı bax <i class="far fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+
+        </div>
+
+
+        <div class="pagination_area mt_60 wow fadeInUp">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  {% if services.has_previous %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ services.previous_page_number }}" aria-label="Previous">
+                              <i class="far fa-arrow-left"></i>
+                          </a>
+                      </li>
+                    {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Previous">
+                              <i class="far fa-arrow-left"></i>
+                          </a>
+                      </li>
+                  {% endif %}
+                  {% for i in services.paginator.page_range %}
+                      {% if services.number == i %}
+                          <li class="page-item "><a class="page-link active" href="?page={{ i }}">{{ i }}</a></li>
+                      {% else %}
+                          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% if services.has_next %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ services.next_page_number }}" aria-label="Next">
+                              <i class="far fa-arrow-right"></i>
+                          </a>
+                      </li>
+                  {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Next">
+                              <i class="far fa-arrow-right"></i>
+                          </a>
+                      </li>
+                  {% endif %}
+              </ul>
+            </nav>
+          </div>
+
+      </div>
+    </section>
+
+    <!-- BRANCH POPUT START -->
+    <div class="branch_popup cart_popup">
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="fal fa-times"></i>
+              </button>
+              <div class="branch_popup_img">
+                <img
+                  src="assets/images/branch_popup_img.jpg"
+                  alt="menu"
+                  class="img-fluid w-100"
+                />
+              </div>
+              <div class="branch_popup_text">
+                <a href="#" class="title">singapore Branchr</a>
+                <p class="description">
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form by injected humour.or randomised words.
+                </p>
+                <a class="branch_call_mail" href="callto:990123456789"
+                  ><i class="fas fa-phone-alt"></i> +990 123 456 789</a
+                >
+                <a
+                  class="branch_call_mail"
+                  href="mailto:support@RESTINAgmail.com"
+                  ><i class="fas fa-envelope"></i>support@RESTINAgmail.com</a
+                >
+                <p class="branch_call_mail">
+                  <i class="fas fa-map-marker-alt"></i> City Tower New York,
+                  United States
+                </p>
+                <ul>
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="branch_popup_map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.619899862254!2d103.79044271166414!3d1.404353861389994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da13d9102adcaf%3A0xb414fac8a43b1b91!2sSingapore%20Zoo!5e0!3m2!1sen!2sbd!4v1700396748481!5m2!1sen!2sbd"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BRANCH POPUT END -->
+    <!--==========================
+        BRANCHES END
+    ===========================-->
+
+{% endblock main %}

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'menu',
     'contact',
     'gallery',
+    'service',
 ]
 
 

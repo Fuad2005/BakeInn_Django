@@ -123,19 +123,19 @@
         <div class="section_heading heading_left mb_10">
           <h5>Xidmətlərimiz</h5>
         </div>
+       {% for service in services %}
         <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
           <div class="single_branch">
             <div class="single_branch_img">
-              <img src="{% static 'assets/images/branch_img_1.jpg' %}" alt="branch" class="img-fluid w-100" />
+              <img src="{{service.image.url}}" alt="branch" class="img-fluid w-100" />
             </div>
             <div class="single_branch_text">
               <div class="single_branch_title">
-                <a class="title" href="#">Australia Branch</a>
+                <a class="title" href="#">{{service.title}}</a>
               </div>
               <div class="single_branch_content">
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
+                  {{service.description}}
                 </p>
               </div>
               <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
@@ -145,163 +145,10 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_2.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">New York Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_3.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">Nepal Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_4.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">China Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_5.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">thailand Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_6.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">japan Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_7.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">kanada Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
-          <div class="single_branch">
-            <div class="single_branch_img">
-              <img src="assets/images/branch_img_8.jpg" alt="branch" class="img-fluid w-100" />
-            </div>
-            <div class="single_branch_text">
-              <div class="single_branch_title">
-                <a class="title" href="#">USA Branch</a>
-              </div>
-              <div class="single_branch_content">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aliquid, minima.
-                </p>
-              </div>
-              <a class="common_btn applybtn_apply" href="contact.html">Müraciət et <i
-                  class="far fa-angle-right"></i></a>
-              <a class="common_btn morebtn_services" href="service-details.html">Ətraflı bax <i
-                  class="far fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
       <div class="branches-button">
-        <a class="common_btn morebtn_about mt_35" href="services.html">Daha çox
+        <a class="common_btn morebtn_about mt_35" href="{% url "service" %}">Daha çox
         </a>
       </div>
     </div>
