@@ -9,7 +9,7 @@
     ===========================-->
     <section
       class="breadcrumb_area"
-      style="background: url(assets/images/breadcrumb_bg.jpg)"
+      style="background: url({% static 'assets/images/breadcrumb_bg.jpg' %})"
     >
       <div class="container">
         <div class="row wow fadeInUp">
@@ -39,7 +39,7 @@
           {% for menu_item in menu %}
           <div class="col-xl-3 col-6 col-lg-4 wow fadeInUp">
             <div class="single_menu">
-              <a href="menu_details.html" class="single_menu_img">
+              <a href="{% url "menu_detail" menu_item.id %}" class="single_menu_img">
                 <img
                   src="{{ menu_item.get_main_image_url }}"
                   alt="{{ menu_item.title }}"

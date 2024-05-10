@@ -1,5 +1,6 @@
 {% extends "layouts/layout.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Bukhari{% endblock title %}
 
@@ -15,11 +16,10 @@
       <div class="row justify-content-between align-items-center">
         <div class="col-xxl-6 col-lg-6 col-xl-6 col-md-9">
           <div class="banner_text wow fadeInUp">
-            <h5>Dadlı yeməklər</h5>
-            <h1>Sizlərə xidmət üçün müxtəlif təamlar</h1>
+            <h5>{% trans home_page_text.banner_mini_text %} </h5>
+            <h1>{{home_page_text.banner_bold_text}}</h1>
             <p>
-              Commodo ullamcorper a lacus vestibulum sed arcu non. Non blandit
-              massa enim Sem viverra aliquet eget sit amet tellus cras
+              {{home_page_text.banner_main_text}}
             </p>
             <a class="header-more_btn" href="{% url "menu" %}">Menu</a>
           </div>
@@ -52,15 +52,9 @@
         <div class="col-lg-6 wow fadeInRight">
           <div class="about_us_2_text">
             <h5>Haqqımızda</h5>
-            <h2>Bukharıya xoş gəlmisiniz!</h2>
+            <h2>{{home_page_text.about_bold_text}}</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-              laborum deserunt voluptas nemo, iusto sequi dolor tempora sed
-              provident itaque, fugit autem odio cupiditate officia quaerat.
-              Magni modi earum commodi omnis culpa deleniti. Ad sunt,
-              blanditiis veniam ipsam voluptas aliquam.Iiusto sequi dolor
-              tempora sed provident itaque, fugit autem odio cupiditate
-              officia quaerat. Magni modi earum commodi omnis culpa deleniti.
+              {{home_page_text.about_main_text}}
             </p>
             <a class="menu_order common_btn morebtn_about" href="about.html">
               Ətraflı
@@ -190,28 +184,28 @@
                   <div class="icon">
                     <i class="fa-solid fa-user"></i>
                   </div>
-                  <h3><span class="counter">856</span>+</h3>
+                  <h3><span class="counter">{{home_page_text.number_of_clients}}</span>+</h3>
                   <p>Müştərilərimiz</p>
                 </li>
                 <li class="wow fadeInUp">
                   <div class="icon">
                     <i class="fa-solid fa-ranking-star"></i>
                   </div>
-                  <h3><span class="counter">25</span>+</h3>
+                  <h3><span class="counter">{{home_page_text.experience_years}}</span>+</h3>
                   <p>Təcrübə</p>
                 </li>
                 <li class="wow fadeInUp">
                   <div class="icon">
                     <i class="fa-solid fa-spray-can-sparkles"></i>
                   </div>
-                  <h3><span class="counter">100</span>%</h3>
+                  <h3><span class="counter">{{home_page_text.clean_percent}}</span>%</h3>
                   <p>Təmiz & Halal</p>
                 </li>
                 <li class="wow fadeInUp">
                   <div class="icon">
                     <i class="fa-solid fa-users"></i>
                   </div>
-                  <h3><span class="counter">150</span>+</h3>
+                  <h3><span class="counter">{{home_page_text.number_of_members}}</span>+</h3>
                   <p>Üzvlər</p>
                 </li>
               </ul>

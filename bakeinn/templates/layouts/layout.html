@@ -93,7 +93,7 @@
     <nav class="navbar navbar-expand-lg main_menu">
       <div class="container container_large">
         <a class="navbar-brand" href="{% url "home" %}">
-          <img src="{% static 'assets/images/bukhari-catering.png' %}" alt="RESTINA" class="img-fluid w-100" />
+          <img src="{{header_footer_info.header_logo.url}}" alt="RESTINA" class="img-fluid w-100" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,14 +170,11 @@
             <div class="col-lg-3 col-md-4">
               <div class="footer_info">
                 <a class="footer_logo" href="index.html">
-                  <img src="{% static "assets/images/bukhari-catering.png" %}" alt="RESTINA" class="img-fluid w-100" />
+                  <img src="{{header_footer_info.footer_logo.url}}" alt="RESTINA" class="img-fluid w-100" />
                 </a>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae, aperiam. Earum, recusandae animi! Magnam porro
-                  reiciendis, in facilis numquam dolorum mollitia similique
-                  accusantium perspiciatis ipsum consequatur eveniet consectetur
-                  repellendus repudiandae?
+                  {{header_footer_info.footer_text}}
+                  
                 </p>
               </div>
             </div>

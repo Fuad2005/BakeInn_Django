@@ -1,0 +1,193 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+
+{% block title %}{{service.title}}{% endblock %}
+
+{% block main %}
+    <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+    <section
+      class="breadcrumb_area"
+      style="background: url({% static 'assets/images/breadcrumb_bg.jpg' %})"
+    >
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-12">
+            <div class="breadcrumb_text">
+              <h1>Xidmət haqqında</h1>
+              <ul>
+                <li><a href="{% url "home" %}">Ana Səhifə </a></li>
+                <li><a href="#">Xidmət haqqında</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+    <!--==========================
+        SERVICE DETAILS START
+    ===========================-->
+    <section class="service_details pt_40 xs_pt_100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 wow fadeInLeft">
+            <div class="blog_details_img">
+              <img
+                src="{{service.image.url}}"
+                alt="service details"
+                class="img-fluid w-100"
+              />
+            </div>
+            <div class="blog_details_text">
+              <h2>{{service.title}}</h2>
+              <p>
+                {{service.description}}
+              </p>
+              <a
+                class="menu_order common_btn service-applybtn"
+                href="{% url 'contact' %}"
+              >
+                <i class="fa-solid fa-shop"></i>
+                müraciət et
+              </a>
+            </div>
+            <div class="related_posts">
+              <div class="row">
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{% static 'assets/images/blog_2_img_9.jpg' %}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{% static 'assets/images/blog_2_img_9.jpg' %}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{% static 'assets/images/blog_2_img_8.jpg' %}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{% static 'assets/images/blog_2_img_8.jpg' %}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{% static 'assets/images/blog_2_img_7.jpg' %}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{% static 'assets/images/blog_2_img_7.jpg' %}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{% static 'assets/images/blog_2_img_8.jpg' %}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{% static 'assets/images/blog_2_img_8.jpg' %}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{% static 'assets/images/blog_2_img_7.jpg' %}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{% static 'assets/images/blog_2_img_7.jpg' %}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="{% static 'assets/images/blog_2_img_9.jpg' %}"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="{% static 'assets/images/blog_2_img_9.jpg' %}" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-8 wow fadeInRight">
+            <div class="blog_sidebar sticky_sidebar">
+              <div class="sidebar_wizard sidebar_search">
+                <h2>Axtarış</h2>
+                <form action="{% url 'service' %}" method='get' >
+                  <input type="text" name='service' placeholder="Axtar..." />
+                  <button type="submit"><i class="far fa-search"></i></button>
+                </form>
+              </div>
+              <div class="sidebar_wizard service_category mt_25">
+                <h2>Digər Xidmətlər</h2>
+                <div class="row">
+                  {% for serv in recent %}
+                  <div class="col-xl-6 col-6">
+                    <div class="service_category_img">
+                      <img
+                        src="{{serv.image.url}}"
+                        alt="food"
+                        class="img-fluid w-100"
+                      />
+                      <div class="service_category_text">
+                        <a href="{% url "service_detail" serv.id %}">{{serv.title}}</a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        SERVICE DETAILS END
+    ===========================-->
+{% endblock main %}
