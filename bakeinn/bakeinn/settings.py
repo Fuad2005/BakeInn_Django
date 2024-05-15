@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # third party apps
     'rosetta',
+    'ckeditor',
 
     # my apps
     'info',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'contact',
     'gallery',
     'service',
+    'blog',
 ]
 
 

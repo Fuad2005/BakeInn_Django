@@ -1,0 +1,291 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+
+{% block title %}{{blog_item.title}}{% endblock title %}
+
+
+{% block main %}
+    <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+    <section
+      class="breadcrumb_area"
+      style="background: url({% static "assets/images/breadcrumb_bg.jpg" %})"
+    >
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-12">
+            <div class="breadcrumb_text">
+              <h1>Bloqun Detalları</h1>
+              <ul>
+                <li><a href="index.html">Ana Səhifə </a></li>
+                <li><a href="#">Bloqun Detalları</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+    <!--==========================
+        BLOG DETAILS START
+    ===========================-->
+    <section class="blog_details mt_40">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 wow fadeInLeft">
+            <div class="blog_details_img">
+              <img
+                src="assets/images/blog_details_img.jpg"
+                alt="blog details"
+                class="img-fluid w-100"
+              />
+            </div>
+            <div class="blog_details_text">
+              <h2>Pairing wine with indian food: tips from a sommelier</h2>
+              <p>
+                Aenean et tempor eros, vitae sollicitudin velit. Etiam varius
+                enim nec quam tempor, sed efficitur ex ultrices. Phasellus
+                pretium est vel dui vestibulum condimentum. Aenean nec suscipit
+                nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur
+                lobortis, elit ut elementum congue, erat ex bibendum odio, nec
+                iaculis lacus sem non lorem. Duis suscipit metus ante, sed
+                convallis quam posuere quis. Ut tincidunt eleifend odio, ac
+                fringilla mi vehicula nec. Nunc vitae lacus eget lectus
+                imperdiet tempus sed in dui. Nam molestie magna at risus
+                consectetur, placerat suscipit justo dignissim. Sed vitae
+                fringilla enim, nec ullamcorper arcu.Aenean sit amet quam vel
+                turpis interdum sagittis et eget neque. Nunc ante quam, luctus
+                et neque a, interdum iaculis metus. Aliquam vel ante mattis,
+                placerat orci id, vehicula quam. Suspendisse quis eros cursus,
+                viverra urna sed, commodo mauris.
+              </p>
+
+              <ul>
+                <li>
+                  Modern an unknown printer took a galley Letraset sheets
+                  containing.Pizzhen.
+                </li>
+                <li>
+                  There are many variations of passages of Lorem availa
+                  bleLetraset sheets containing.Pizzhen.
+                </li>
+                <li>
+                  Sure there isn't anything embarrassing hidden Letraset sheets
+                  containing.Pizzhen in the middle of text.
+                </li>
+                <li>
+                  One Modern an unknown printer took a Letraset sheets
+                  containing.Pizzhen galley.
+                </li>
+              </ul>
+              <p>
+                Pizzhen an unknown printer took a galley of type and scrambled
+                it to make a type specimen bookIt hasey survived not only five
+                centurie. Pizzhen an unknown printer took a galley of type and
+                scrambled it to make a type specimen bookIt hasey survived not
+                only five centurieSuspendisse turpis ipsum, tempus in nulla eu,
+                posuere pharetra nibh. In dignissim vitae lorem non mollis.
+                Praesent pretium tellus in tortor viverra condimentum. Nullam
+                dignissim facilisis nisl, accumsan placerat justo ultricies vel.
+                Vivamus finibus mi a neque pretium, ut convallis dui lacinia.
+                Morbi a rutrum velit. Curabitur sagittis quam quis consectetur
+                mattis.
+              </p>
+            </div>
+            <div class="related_posts">
+              <div class="row">
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="assets/images/blog_2_img_9.jpg"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="assets/images/blog_2_img_9.jpg" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="assets/images/blog_2_img_8.jpg"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="assets/images/blog_2_img_8.jpg" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="assets/images/blog_2_img_7.jpg"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="assets/images/blog_2_img_7.jpg" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="assets/images/blog_2_img_7.jpg"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="assets/images/blog_2_img_7.jpg" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="assets/images/blog_2_img_9.jpg"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="assets/images/blog_2_img_9.jpg" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-6">
+                  <div class="single_related">
+                    <div class="related_thumb">
+                      <a
+                        href="assets/images/blog_2_img_8.jpg"
+                        data-fancybox="blog-images"
+                      >
+                        <img src="assets/images/blog_2_img_8.jpg" alt="" />
+                        <span class="zoom-icon"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8 wow fadeInRight">
+            <div class="blog_sidebar sticky_sidebar">
+              <div class="sidebar_wizard sidebar_search">
+                <h2>Axtarış</h2>
+                <form>
+                  <input type="text" placeholder="Axtar..." />
+                  <button type="submit"><i class="far fa-search"></i></button>
+                </form>
+              </div>
+              <div class="sidebar_wizard sidebar_category mt_25">
+                <h2>Kateqoriyalar</h2>
+                <ul>
+                  <li>
+                    <a href="menu.html">Yeməklər</a>
+                  </li>
+                  <li>
+                    <a href="menu.html">Qəlyənaltılar</a>
+                  </li>
+                  <li>
+                    <a href="menu.html">İçkilər</a>
+                  </li>
+                  <li>
+                    <a href="menu.html">Kombo</a>
+                  </li>
+                  <li>
+                    <a href="menu.html">Pizza</a>
+                  </li>
+                  <li>
+                    <a href="menu.html">Burger</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="sidebar_wizard sidebar_post mt_25">
+                <h2>son postlar</h2>
+                <ul>
+                  <li>
+                    <div class="img">
+                      <img
+                        src="assets/images/sidebar_post_img_1.jpg"
+                        alt="post"
+                        class="img-fluid w-100"
+                      />
+                    </div>
+                    <div class="text">
+                      <p>
+                        <i class="fa-solid fa-calendar-days"></i> aprel 3, 2024
+                      </p>
+                      <a class="title" href="blog_details.html"
+                        >Freshly Served Exploring the World of Fresh</a
+                      >
+                    </div>
+                  </li>
+                  <li>
+                    <div class="img">
+                      <img
+                        src="assets/images/sidebar_post_img_2.jpg"
+                        alt="post"
+                        class="img-fluid w-100"
+                      />
+                    </div>
+                    <div class="text">
+                      <p>
+                        <i class="fa-solid fa-calendar-days"></i> aprel 3, 2024
+                      </p>
+                      <a class="title" href="blog_details.html"
+                        >Innovative Hot Chess raw Make Creator.</a
+                      >
+                    </div>
+                  </li>
+                  <li>
+                    <div class="img">
+                      <img
+                        src="assets/images/sidebar_post_img_3.jpg"
+                        alt="post"
+                        class="img-fluid w-100"
+                      />
+                    </div>
+                    <div class="text">
+                      <p>
+                        <i class="fa-solid fa-calendar-days"></i> aprel 3, 2024
+                      </p>
+                      <a class="title" href="blog_details.html"
+                        >This So Trendy Restaurant That Everyone</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BLOG DETAILS END
+    ===========================-->
+{% endblock main %}

@@ -1,0 +1,171 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+{% block title %}Bloglar{% endblock title %}
+
+
+{% block main %}
+    <!--==========================
+        BREADCRUMB AREA START
+    ===========================-->
+    <section
+      class="breadcrumb_area"
+      style="background: url({% static "assets/images/breadcrumb_bg.jpg" %})"
+    >
+      <div class="container">
+        <div class="row wow fadeInUp">
+          <div class="col-12">
+            <div class="breadcrumb_text">
+              <h1>Xəbərlər</h1>
+              <ul>
+                <li><a href="index.html">Ana Səhifə </a></li>
+                <li><a href="#">Xəbərlər</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--==========================
+        BREADCRUMB AREA END
+    ===========================-->
+
+    <!--==========================
+        BLOGS START
+    ===========================-->
+
+    <section class="blog_main mt_20">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="row">
+
+              {% for blog in blog_items %}
+              <div class="col-xl-6 col-6 wow fadeInUp">
+                <div class="single_blog">
+                  <a href="{% url "blog_detail" blog.id %}" class="single_blog_img">
+                    <img
+                      src="{{ blog.image.url }}"
+                      alt="blog"
+                      class="img-fluid w-100"
+                    />
+                  </a>
+                  <div class="single_blog_text">
+                    <ul>
+                      <li>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        {{ blog.created_at|date:"M d, Y" }}
+                      </li>
+                    </ul>
+                    <div class="blog_main-title">
+                      <a class="title" href="{% url "blog_detail" blog.id %}"
+                        >{{blog.title}}</a
+                      >
+                    </div>
+                    <div class="blog_main-text">
+                      <p>
+                        {{blog.content|safe}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+           
+          </div>
+          <div class="col-lg-4 col-md-8 wow fadeInRight">
+            <div class="blog_sidebar sticky_sidebar">
+              <div class="sidebar_wizard sidebar_search">
+                <h2>Axtarış</h2>
+                <form method="get" action="{% url 'blog' %}">
+                  <input type="text" name="title" placeholder="Axtar..." />
+                  <button type="submit"><i class="far fa-search"></i></button>
+                </form>
+              </div>
+              <div class="sidebar_wizard sidebar_category mt_25">
+                <h2>Kateqoriyalar</h2>
+                <ul>
+                  {% for cat in categories %}
+                  <li>
+                    <a href="{% url "menu" %}?tag={{cat.title}}">{{cat.title}}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="sidebar_wizard sidebar_post mt_25">
+                <h2>son postlar</h2>
+                <ul>
+                  {% for item in recent %}
+                  <li>
+                    <div class="img">
+                      <img
+                        src="{{item.image.url}}"
+                        alt="post"
+                        class="img-fluid w-100"
+                      />
+                    </div>
+                    <div class="text">
+                      <p>
+                        <i class="fa-solid fa-calendar-days"></i> {{item.created_at|date:"M d, Y"}}
+                      </p>
+                      <a class="title" href="{% url "blog_detail" item.id %}"
+                        >{{item.title}}</a
+                      >
+                    </div>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination_area mt_60 wow fadeInUp">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  {% if blog_items.has_previous %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ blog_items.previous_page_number }}" aria-label="Previous">
+                              <i class="far fa-arrow-left"></i>
+                          </a>
+                      </li>
+                    {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Previous">
+                              <i class="far fa-arrow-left"></i>
+                          </a>
+                      </li>
+                  {% endif %}
+                  {% for i in blog_items.paginator.page_range %}
+                      {% if blog_items.number == i %}
+                          <li class="page-item "><a class="page-link active" href="?page={{ i }}">{{ i }}</a></li>
+                      {% else %}
+                          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% if blog_items.has_next %}
+                      <li class="page-item">
+                          <a class="page-link" href="?page={{ blog_items.next_page_number }}" aria-label="Next">
+                              <i class="far fa-arrow-right"></i>
+                          </a>
+                      </li>
+                  {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Next">
+                              <i class="far fa-arrow-right"></i>
+                          </a>
+                      </li>
+                  {% endif %}
+              </ul>
+            </nav>
+          </div>
+        
+      </div>
+    </section>
+    <!--==========================
+        BLOGS END
+    ===========================-->
+
+{% endblock main %}

@@ -9,17 +9,14 @@ def menuPage(request):
     title = request.GET.get('title')
     socials = Socials.objects.all()
 
-
+    menu_list = MenuItem.objects.all()
+    
     if tag:
         menu_list = MenuItem.objects.filter(tag__title=tag)
-    else:
-        menu_list = MenuItem.objects.all()
-
 
     if title:
         menu_list = MenuItem.objects.filter(title__icontains=title)
-    else:
-        menu_list = MenuItem.objects.all()
+   
 
     paginator = Paginator(menu_list, 12)
 
